@@ -1,0 +1,36 @@
+{
+  "name": "rescript-next",
+  "sources": [
+    {
+      "dir": "app/src",
+      "subdirs": true
+    },
+    {
+      "dir": "packages/ui/src",
+      "subdirs": true
+    },
+    {
+      "dir": "packages/store",
+      "subdirs": true
+    },
+    {
+      "dir": "packages/wasm",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
+  },
+  "bs-dependencies": [
+    "@rescript/react"
+  ],
+  "js-post-build": {
+    "cmd": "./use-client-mod.cjs"
+  }
+}

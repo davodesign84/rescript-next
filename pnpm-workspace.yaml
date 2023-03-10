@@ -1,0 +1,5 @@
+packages:
+  - "app"
+  - "packages/ui"
+  - "packages/store"
+  - "packages/wasm/pkg"

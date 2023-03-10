@@ -1,0 +1,13 @@
+{
+    "name": "store",
+    "version": "0.1.0",
+    "keywords": [
+        "rescript"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "react": "18.2.0",
+        "zustand": "^4.3.6"
+    }
+}

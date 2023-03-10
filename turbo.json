@@ -1,0 +1,55 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build",
+        "//#wasm",
+        "//#res:build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "//#res:build": {
+      "inputs": [
+        "app/src/**/*.res",
+        "app/src/**/*.resi",
+        "packages/**/*.res",
+        "packages/**/*.resi"
+      ],
+      "outputs": [
+        "lib/**/*"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "//#res:dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "//#wasm": {
+      "inputs": [
+        "packages/wasm/Cargo.toml",
+        "packages/wasm/src"
+      ],
+      "outputs": [
+        "packages/wasm/pkg"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "build"
+      ]
+    }
+  }
+}
